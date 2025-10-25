@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // IMPORTS
 import dotenv from 'dotenv';
 import express, { Express, Request, Response } from 'express';
@@ -36,27 +35,3 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 export default app;
-
-const matrix = (...args: (string | number | Record<string, any> | any[])[]) => {
-  return args;
-};
-
-const result = matrix(
-  1,
-  2,
-  3, // numbers
-  'hello',
-  'world', // strings
-  { id: 1, name: 'Alice' }, // object
-  [{ id: 2, items: [10, 20] }], // array of objects
-  [1, 2, 3], // array of numbers
-  'TypeScript', // string
-  { settings: { darkMode: true } }, // nested object
-  [
-    [1, 2],
-    [3, 4],
-  ], // array of arrays
-  { users: [{ name: 'Bob' }, { name: 'Charlie' }] } // object with nested array
-);
-
-console.log(result);
