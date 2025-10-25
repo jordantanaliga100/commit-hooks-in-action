@@ -1,0 +1,19 @@
+import { default as js } from '@eslint/js';
+import { defineConfig } from 'eslint/config';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+
+export default defineConfig([
+  {
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts,md, json}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-undef': 'warn',
+    },
+    languageOptions: { globals: globals.node },
+  },
+  tseslint.configs.recommended,
+  // eslint.configs.recommended,
+]);

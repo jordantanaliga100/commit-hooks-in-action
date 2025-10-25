@@ -6,21 +6,46 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsnd --clear --respawn --transpile-only src/index.ts"
+    "dev": "tsnd --clear --respawn --transpile-only src/index.ts",
+    "lint": "eslint . ",
+    "lint:fix": "eslint . --fix ",
+    "format": " prettier . --write"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
+    "@eslint/js": "^9.38.0",
     "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.4",
+    "@types/morgan": "^1.9.10",
     "@types/node": "^24.9.1",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "lint-staged": "^16.2.6",
+    "morgan": "^1.10.1",
+    "prettier": "3.6.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "json5": "^2.2.3"
   }
 }
